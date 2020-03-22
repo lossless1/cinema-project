@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+RedirectMatch 403 /\..*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag log_errors on
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+php_value max_file_uploads 100
+AddDefaultCharset UTF-8

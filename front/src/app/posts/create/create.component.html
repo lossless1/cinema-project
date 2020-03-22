@@ -1,0 +1,27 @@
+<div class="content">
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="post_type_id">Post Type:</label>
+                    <select class="form-control" id="post_type_id" [(ngModel)]="createData.post_type" required>
+                        <option value="activity_stream" selected="selected">Activity Stream</option>
+                        <option value="forum_stream">Forum Stream</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-12 col-lg-12">
+                    <label>Content:</label>
+                    <textarea class="form-control" cols="50" rows="10" [(ngModel)]="createData.content"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary" [routerLink]="['/posts']">
+        Back
+    </button>
+    <button class="btn btn-default" (click)="createPostById()">
+        Create
+    </button>
+</div>

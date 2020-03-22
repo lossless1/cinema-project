@@ -1,0 +1,9 @@
+<div class="navigation">
+    <div class="nav-link">
+        <a *ngIf="isAuthorized" [routerLink]="['/posts']">Posts</a>
+        <a *ngIf="isAuthorized" [routerLink]="['/cabinet']">Cabinet</a>
+        <a *ngIf="!isAuthorized" [routerLink]="['/login']">Login</a>
+        <a *ngIf="!isAuthorized" [routerLink]="['/register']">Registration</a>
+        <a *ngIf="isAuthorized" [routerLink]="['/parse']">Parsing</a>
+    </div>
+</div>

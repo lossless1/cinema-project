@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-xs-6">
+        <h1>Cabinet</h1>
+    </div>
+    <div class="col-xs-6">
+        <h1><a (click)="logoutUser()">Logout</a></h1>
+    </div>
+</div>
+<div>
+    <div class="col-xs-6 ">
+        <img class="avatar" [src]="userData.image" alt="">
+        <div>
+            <input type="file" id="file" class="inputfile inputfile-1" (change)="updateUserImage($event)">
+            <label for="file">
+                <span>Choose a file…</span>
+            </label>
+        </div>
+    </div>
+    <div class="col-xs-6 info">
+        <div>
+            <label>Name:
+                <input [(ngModel)]="userData.name">
+            </label>
+        </div>
+        <div>
+            <label>Email:
+                <input [(ngModel)]="userData.email">
+            </label>
+        </div>
+        <div>
+            <label>First name:
+                <input [(ngModel)]="userData.firstname">
+            </label>
+        </div>
+        <div>
+            <label>Surname:
+                <input [(ngModel)]="userData.surname">
+            </label>
+        </div>
+        <div>
+            <label>Position:
+                <input [(ngModel)]="userData.position">
+            </label>
+        </div>
+        <div>
+            <label>Company:
+                <input [(ngModel)]="userData.company">
+            </label>
+        </div>
+        <div>
+            <label>Phone:
+                <input [(ngModel)]="userData.phone">
+            </label>
+        </div>
+        <div>
+            <label>Description:
+                <input [(ngModel)]="userData.description">
+            </label>
+
+        </div>
+        <div>
+            <label>Linkedin Account:
+                <input [(ngModel)]="userData.linkedin_account">
+            </label>
+        </div>
+        <div>
+            <label>Facebook Account:
+                <input [(ngModel)]="userData.facebook_account">
+            </label>
+        </div>
+        <div>
+            <label>Twitter Account:
+                <input [(ngModel)]="userData.twitter_account">
+            </label>
+        </div>
+        <div>
+            <label>Google Plus Account:
+                <input [(ngModel)]="userData.google_plus_account">
+            </label>
+        </div>
+        <div>
+            <strong>Created:</strong>
+            <span>{{userData.created_at}}</span>
+        </div>
+        <div>
+            <strong>Updated:</strong>
+            <span>{{userData.updated_at}}</span>
+        </div>
+        <button class="btn btn-success" (click)="updateUserInfo()">Save</button>
+    </div>
+</div>

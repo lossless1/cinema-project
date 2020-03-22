@@ -1,0 +1,30 @@
+<div class="col-xs-6">
+    <h1>Login</h1>
+    <div class="form-group">
+        <label for="name">Username</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="username" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" required>
+    </div>
+
+    <button (click)="authUser()" type="submit" class="btn btn-success">Login</button>
+
+    <div *ngIf="isError" class="error">
+        <div class="panel panel-danger">
+            <div class="panel-heading">{{errorHead}}</div>
+            <div class="panel-body">{{errorBody}}</div>
+        </div>
+    </div>
+    <div *ngIf="isSuccess" class="success">
+        <div class="alert alert-success">
+            You have log in!
+        </div>
+    </div>
+</div>

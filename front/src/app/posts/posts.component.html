@@ -1,0 +1,41 @@
+<div>
+    <div class="header-posts">
+        <div>
+            <h1>Posts</h1>
+        </div>
+        <div>
+            <button class="btn btn-primary" [routerLink]="['/post/create']">Create Post</button>
+        </div>
+    </div>
+    <table class="box box-primary">
+        <thead>
+        <tr>
+            <th>Post</th>
+            <th>Type Id</th>
+            <th>User Id</th>
+            <th>Content</th>
+            <th>Photo</th>
+            <th colspan="3">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let post of postsData;let i = index;">
+            <td>{{post.id}}</td>
+            <td>{{post.type.id}}</td>
+            <td>{{post.user.id}}</td>
+            <td>{{post.content}}</td>
+            <td>{{post.photo}}</td>
+            <td>
+                <div class="btn-group">
+                    <a class="btn btn-default btn-xs" [routerLink]="['/post',post.id]"><i
+                            class="glyphicon glyphicon-eye-open"></i></a>
+                    <a class="btn btn-default btn-xs" [routerLink]="['/post',post.id,'update']"><i
+                            class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn btn-danger btn-xs" (click)="deletePost(post.id)"><i
+                            class="glyphicon glyphicon-trash"></i></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
